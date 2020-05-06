@@ -1,62 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bytebank_alura/screens/dashboard.dart';
 
-void main() => runApp(BytebankApp());
+void main() => runApp(ByteBankApp());
 
-class BytebankApp extends StatelessWidget {
+class ByteBankApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-	    title: 'Bytebank Persistence',
+      title: 'ByteBank Persistence',
       theme: ThemeData(
-	      primarySwatch: Colors.green,
+        primaryColor: Colors.green[900],
+        accentColor: Colors.greenAccent[700],
+        primarySwatch: Colors.green,
+        buttonColor: Colors.green[900],
       ),
-	    home: Dashboard(context),
-    );
-  }
-
-  Scaffold Dashboard(BuildContext context) {
-	  return Scaffold(
-		  appBar: AppBar(
-			  title: Text('Dashboard'),
-		  ),
-		  body: Column(
-			  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-			  crossAxisAlignment: CrossAxisAlignment.start,
-			  children: <Widget>[
-				  Padding(
-					  padding: const EdgeInsets.all(8.0),
-					  child: Image.asset('images/bytebank_logo.png'),
-				  ),
-				  Container(
-					  margin: EdgeInsets.all(8),
-					  padding: EdgeInsets.all(8),
-					  height: 100,
-					  width: 150,
-					  color: Theme
-							  .of(context)
-							  .primaryColor,
-					  child: Column(
-						  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-						  crossAxisAlignment: CrossAxisAlignment.start,
-						  children: <Widget>[
-							  Icon(
-								  Icons.people,
-								  color: Colors.white,
-								  size: 24,
-							  ),
-							  Text(
-								  'Contacts',
-								  style: TextStyle(
-									  color: Colors.white,
-									  fontSize: 16,
-								  ),
-							  ),
-						  ],
-					  ),
-				  )
-			  ],
-		  ),
+      home: DashBoard(),
     );
   }
 }
